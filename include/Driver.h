@@ -10,7 +10,8 @@
 
 #include "cameras/CameraH264.h"
 #include "cameras/CameraJpg.h"
-#include <DriveworksApiWrapper.h>
+#include "cameras/CameraVp9.h"
+#include "DriveworksApiWrapper.h"
 #include "thread_pool.hpp"
 
 #include "exceptions/NvidiaGmslDriverRosFatalException.h"

@@ -45,10 +45,12 @@ add_executable(
   src/cameras/CameraBase.cpp
   src/cameras/CameraH264.cpp
   src/cameras/CameraJpg.cpp
+  src/cameras/CameraVp9.cpp
   src/DriveworksApiWrapper.cpp
   src/log.cpp
   src/encoders/NvMediaJpgEncoder.cpp
   src/encoders/NvMediaH264Encoder.cpp
+  src/encoders/NvMediaVp9Encoder.cpp
   src/tools/ImageConverter.cpp
   src/tools/ImageTransformer.cpp)
 
