@@ -10,7 +10,7 @@ dwLogCallback ros_log_wrapper()
       // Removing redundant date messages.
       return;
     }
-    
+
     std::string to_print(msg);
     to_print.erase(std::remove(to_print.begin(), to_print.end(), '\n'), to_print.cend());
 

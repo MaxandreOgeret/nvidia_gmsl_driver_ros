@@ -3,19 +3,18 @@
 
 #pragma once
 
-#include <yaml-cpp/yaml.h>
 #include <dw/sensors/Sensors.h>
 #include <ros/package.h>
 #include <ros/ros.h>
+#include <yaml-cpp/yaml.h>
 
 #include "cameras/CameraH264.h"
 #include "cameras/CameraJpg.h"
 #include "cameras/CameraVp9.h"
 #include "DriveworksApiWrapper.h"
-#include "thread_pool.hpp"
-
 #include "exceptions/NvidiaGmslDriverRosFatalException.h"
 #include "exceptions/NvidiaGmslDriverRosMinorException.h"
+#include "thread_pool.hpp"
 
 static constexpr size_t MAX_TRIALS = 100;
 

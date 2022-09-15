@@ -44,7 +44,7 @@ SpacesInCStyleCastParentheses: false
 SpaceAfterControlStatementKeyword: true
 SpaceBeforeAssignmentOperators: true
 ContinuationIndentWidth: 4
-SortIncludes: false
+SortIncludes: CaseInsensitive
 SpaceAfterCStyleCast: false
 
 # Configure each individual brace in BraceWrapping

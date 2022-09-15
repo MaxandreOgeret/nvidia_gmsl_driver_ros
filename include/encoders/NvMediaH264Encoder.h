@@ -3,13 +3,13 @@
 
 #pragma once
 
-#include <nvmedia_iep.h>
 #include <dw/image/Image.h>
+#include <nvmedia_iep.h>
 
-#include "exceptions/NvidiaGmslDriverRosFatalException.h"
-#include "framework/Checks.hpp"
 #include "cameras/CameraCommon.h"
 #include "DriveworksApiWrapper.h"
+#include "exceptions/NvidiaGmslDriverRosFatalException.h"
+#include "framework/Checks.hpp"
 
 class NvMediaH264Encoder
 {

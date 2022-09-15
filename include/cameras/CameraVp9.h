@@ -3,12 +3,12 @@
 
 #pragma once
 
-#include <memory>
-
 #include <sensor_msgs/CompressedImage.h>
 
-#include "encoders/NvMediaVp9Encoder.h"
+#include <memory>
+
 #include "cameras/CameraBase.h"
+#include "encoders/NvMediaVp9Encoder.h"
 #include "tools/ImageConverter.h"
 
 class CameraVp9 : public CameraBase

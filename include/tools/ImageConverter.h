@@ -3,10 +3,10 @@
 
 #pragma once
 
+#include <dw/image/Image.h>
+
 #include "DriveworksApiWrapper.h"
 #include "framework/Checks.hpp"
-
-#include <dw/image/Image.h>
 
 class ImageConverter
 {

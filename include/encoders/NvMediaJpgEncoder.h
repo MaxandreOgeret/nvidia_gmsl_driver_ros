@@ -3,14 +3,14 @@
 
 #pragma once
 
+#include <dw/image/Image.h>
+#include <nvmedia_ijpe.h>
+
 #include <memory>
 
-#include <nvmedia_ijpe.h>
-#include <dw/image/Image.h>
-
-#include "framework/Checks.hpp"
 #include "cameras/CameraCommon.h"
 #include "DriveworksApiWrapper.h"
+#include "framework/Checks.hpp"
 
 static constexpr uint32_t MAX_JPG_BYTES = 3 * 1290 * 1208;
 

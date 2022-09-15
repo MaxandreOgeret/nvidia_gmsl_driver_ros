@@ -4,20 +4,18 @@
 
 #pragma once
 
-#include <dwvisualization/gl/GL.h>
-
 #include <cuda_runtime.h>
+#include <dwvisualization/gl/GL.h>
+#include <nvmedia_core.h>
+#include <ros/ros.h>
+#include <time.h>
 
 #include <iostream>
 #include <stdexcept>
 #include <string>
 
-#include <time.h>
-
-#include <ros/ros.h>
-#include <nvmedia_core.h>
-#include "exceptions/NvidiaGmslDriverRosMinorException.h"
 #include "exceptions/NvidiaGmslDriverRosFatalException.h"
+#include "exceptions/NvidiaGmslDriverRosMinorException.h"
 
 inline std::map<int, std::string> NVMEDIA_ERROR_TO_STRING = { { 0, "NVMEDIA_STATUS_OK" },
                                                               { 1, "NVMEDIA_STATUS_BAD_PARAMETER" },

@@ -3,13 +3,13 @@
 
 #pragma once
 
+#include <h264_image_transport_msgs/H264Packet.h>
+#include <sensor_msgs/CompressedImage.h>
+
 #include <memory>
 
-#include <sensor_msgs/CompressedImage.h>
-#include <h264_image_transport_msgs/H264Packet.h>
-
-#include "encoders/NvMediaH264Encoder.h"
 #include "cameras/CameraBase.h"
+#include "encoders/NvMediaH264Encoder.h"
 #include "tools/ImageConverter.h"
 
 class CameraH264 : public CameraBase
@@ -26,7 +26,7 @@ public:
    */
   CameraH264(DriveworksApiWrapper* driveworksApiWrapper, const YAML::Node& config, std::string interface,
              std::string link, ros::NodeHandle* nodehandle);
-  
+
   /**
    * @brief Pushes polled data to the encoder. The encoder will then call it's own callback.
    * @attention Prerequisite : preprocess()

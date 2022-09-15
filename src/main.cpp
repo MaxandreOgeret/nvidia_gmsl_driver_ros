@@ -1,10 +1,11 @@
 // Created by Maxandre Ogeret.
 // (c) 2022 University of Tartu - Autonomous Driving Lab.
 
-#include "Driver.h"
-#include "log.hpp"
 #include <dw/core/VersionCurrent.h>
 #include <ros/ros.h>
+
+#include "Driver.h"
+#include "log.hpp"
 
 int main(int argc, char** argv)
 {

@@ -3,19 +3,19 @@
 
 #pragma once
 
-#include <nvmedia_iep.h>
 #include <dw/image/Image.h>
+#include <nvmedia_iep.h>
 
-#include "exceptions/NvidiaGmslDriverRosFatalException.h"
-#include "framework/Checks.hpp"
 #include "cameras/CameraCommon.h"
 #include "DriveworksApiWrapper.h"
+#include "exceptions/NvidiaGmslDriverRosFatalException.h"
+#include "framework/Checks.hpp"
 
 class NvMediaVp9Encoder
 {
 public:
   static constexpr int BUFFER_SIZE = 1048576;  // 1 MiB
-                                               
+
   NvMediaVp9Encoder(DriveworksApiWrapper* driveworksApiWrapper, int width, int height, int framerate, int bitrate);
   virtual ~NvMediaVp9Encoder();
 

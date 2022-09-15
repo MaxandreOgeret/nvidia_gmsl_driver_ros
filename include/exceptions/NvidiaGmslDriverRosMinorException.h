@@ -3,9 +3,9 @@
 
 #pragma once
 
+#include <memory>
 #include <stdexcept>
 #include <string>
-#include <memory>
 
 /**
  * @class NvidiaGmslDriverRosMinorException

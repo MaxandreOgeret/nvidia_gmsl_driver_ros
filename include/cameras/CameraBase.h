@@ -4,21 +4,20 @@
 #pragma once
 
 #include <camera_info_manager/camera_info_manager.h>
+#include <dw/sensors/camera/Camera.h>
 #include <ros/package.h>
 #include <sensor_msgs/CompressedImage.h>
-
 #include <yaml-cpp/yaml.h>
+
 #include <chrono>
-#include <thread>
 #include <memory>
+#include <thread>
 
-#include <dw/sensors/camera/Camera.h>
-
+#include "cameras/CameraCommon.h"
 #include "DriveworksApiWrapper.h"
 #include "framework/Checks.hpp"
-#include "tools/ImageTransformer.h"
 #include "tools/ImageConverter.h"
-#include "cameras/CameraCommon.h"
+#include "tools/ImageTransformer.h"
 
 /**
  * @brief Base class for cameras.

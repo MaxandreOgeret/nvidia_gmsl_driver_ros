@@ -3,16 +3,15 @@
 
 #pragma once
 
-#include "cameras/CameraBase.h"
-
-#include <memory>
 #include <sensor_msgs/CompressedImage.h>
 #include <std_msgs/Header.h>
-#include <condition_variable>
 
+#include <condition_variable>
+#include <memory>
+
+#include "cameras/CameraBase.h"
 #include "DriveworksApiWrapper.h"
 #include "encoders/NvMediaJpgEncoder.h"
-
 #include "tools/ImageConverter.h"
 
 class CameraJpg : public CameraBase
