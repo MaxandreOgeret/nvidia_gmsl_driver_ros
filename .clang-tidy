@@ -1,3 +1,5 @@
+# Created by Maxandre Ogeret.
+# (c) 2022 University of Tartu - Autonomous Driving Lab.
 Checks: >
   -*,
   bugprone-*,

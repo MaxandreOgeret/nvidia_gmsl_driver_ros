@@ -1,3 +1,6 @@
+# Created by Maxandre Ogeret. (c) 2022 University of Tartu - Autonomous Driving
+# Lab.
+
 cmake_minimum_required(VERSION 3.14 FATAL_ERROR)
 
 project(nvidia_gmsl_driver_ros)
@@ -40,17 +43,19 @@ set(NODE_NAME ${PROJECT_NAME}_node)
 
 add_executable(
   ${NODE_NAME}
-  src/main.cpp
   src/Driver.cpp
+  src/DriveworksApiWrapper.cpp
   src/cameras/CameraBase.cpp
   src/cameras/CameraH264.cpp
+  src/cameras/CameraH265.cpp
   src/cameras/CameraJpg.cpp
   src/cameras/CameraVp9.cpp
-  src/DriveworksApiWrapper.cpp
-  src/log.cpp
-  src/encoders/NvMediaJpgEncoder.cpp
   src/encoders/NvMediaH264Encoder.cpp
+  src/encoders/NvMediaH265Encoder.cpp
+  src/encoders/NvMediaJpgEncoder.cpp
   src/encoders/NvMediaVp9Encoder.cpp
+  src/log.cpp
+  src/main.cpp
   src/tools/ImageConverter.cpp
   src/tools/ImageTransformer.cpp)
 

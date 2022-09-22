@@ -1,4 +1,6 @@
 <?xml version="1.0"?>
+<!--Created by Maxandre Ogeret.-->
+<!--(c) 2022 University of Tartu - Autonomous Driving Lab.-->
 <package>
     <name>nvidia_gmsl_driver_ros</name>
     <version>0.0.0</version>

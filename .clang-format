@@ -1,3 +1,5 @@
+# Created by Maxandre Ogeret.
+# (c) 2022 University of Tartu - Autonomous Driving Lab.
 ---
 BasedOnStyle: Google
 AccessModifierOffset: -2
@@ -52,16 +54,16 @@ BreakBeforeBraces: Custom
 
 # Control of individual brace wrapping cases
 BraceWrapping: {
-  SplitEmptyFunction: 'false'
-    AfterClass: 'true'
-    AfterControlStatement: 'false'
-    AfterEnum: 'true'
-    AfterFunction: 'true'
-    AfterNamespace: 'true'
-    AfterStruct: 'true'
-    AfterUnion: 'true'
-    BeforeCatch: 'false'
-    BeforeElse: 'false'
-    IndentBraces: 'false'
+  SplitEmptyFunction: false,
+  AfterClass: true,
+  AfterControlStatement: 'false',
+  AfterEnum: true,
+  AfterFunction: true,
+  AfterNamespace: true,
+  AfterStruct: true,
+  AfterUnion: true,
+  BeforeCatch: false,
+  BeforeElse: false,
+  IndentBraces: false,
 }
 ...
