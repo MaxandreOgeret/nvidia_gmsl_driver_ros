@@ -88,15 +88,6 @@ void CameraBase::poll()
   }
 }
 
-void CameraBase::run_pipeline()
-{
-  poll();
-  preprocess();
-  encode();
-  CHK_DW(dwSensorCamera_returnFrame(&cameraFrameHandle_));
-  publish();
-}
-
 void CameraBase::preprocess()
 {
   CHK_DW(dwSensorCamera_getImage(&imgOutOfCamera_, DW_CAMERA_OUTPUT_NATIVE_PROCESSED, cameraFrameHandle_));

@@ -16,8 +16,6 @@ CameraJpg::CameraJpg(DriveworksApiWrapper* driveworksApiWrapper, const YAML::Nod
 void CameraJpg::encode()
 {
   encoder_->feed_frame(transformation_needed_ ? &imgTransformed_ : &imgOutOfCamera_);
-  encoder_->bits_available();
-  encoder_->pull_bits();
 }
 
 void CameraJpg::publish()
@@ -31,4 +29,18 @@ void CameraJpg::publish()
 
   camera_info_.header = header_;
   pub_info_.publish(camera_info_);
+}
+
+void CameraJpg::run_pipeline()
+{
+  poll();
+  preprocess();
+  encode();
+
+  while (encoder_->bits_available()) {
+    encoder_->pull_bits();
+    publish();
+  }
+
+  CHK_DW(dwSensorCamera_returnFrame(&cameraFrameHandle_));
 }

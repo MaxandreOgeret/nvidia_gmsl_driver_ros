@@ -19,11 +19,6 @@ CameraH264::CameraH264(DriveworksApiWrapper* driveworksApiWrapper, const YAML::N
 void CameraH264::encode()
 {
   encoder_->feed_frame(transformation_needed_ ? &imgTransformed_ : &imgOutOfCamera_);
-
-  if (!encoder_->bits_available()) {
-    return;
-  }
-  encoder_->pull_bits();
 }
 
 void CameraH264::publish()
@@ -38,4 +33,18 @@ void CameraH264::publish()
 
   camera_info_.header = header_;
   pub_info_.publish(camera_info_);
+}
+
+void CameraH264::run_pipeline()
+{
+  poll();
+  preprocess();
+  encode();
+
+  while (encoder_->bits_available()) {
+    encoder_->pull_bits();
+    publish();
+  }
+
+  CHK_DW(dwSensorCamera_returnFrame(&cameraFrameHandle_));
 }

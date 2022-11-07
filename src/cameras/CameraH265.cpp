@@ -16,16 +16,9 @@ CameraH265::CameraH265(DriveworksApiWrapper* driveworksApiWrapper, const YAML::N
   encoder_ = std::make_unique<NvMediaH265Encoder>(driveworksApiWrapper_, width_, height_, framerate_, bitrate_);
 }
 
-CameraH265::~CameraH265() {}
-
 void CameraH265::encode()
 {
   encoder_->feed_frame(transformation_needed_ ? &imgTransformed_ : &imgOutOfCamera_);
-
-  if (!encoder_->bits_available()) {
-    return;
-  }
-  encoder_->pull_bits();
 }
 
 void CameraH265::publish()
@@ -40,4 +33,18 @@ void CameraH265::publish()
 
   camera_info_.header = header_;
   pub_info_.publish(camera_info_);
+}
+
+void CameraH265::run_pipeline()
+{
+  poll();
+  preprocess();
+  encode();
+
+  while (encoder_->bits_available()) {
+    encoder_->pull_bits();
+    publish();
+  }
+
+  CHK_DW(dwSensorCamera_returnFrame(&cameraFrameHandle_));
 }

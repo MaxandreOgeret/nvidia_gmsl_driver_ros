@@ -19,11 +19,6 @@ CameraVp9::CameraVp9(DriveworksApiWrapper* driveworksApiWrapper, const YAML::Nod
 void CameraVp9::encode()
 {
   encoder_->feed_frame(transformation_needed_ ? &imgTransformed_ : &imgOutOfCamera_);
-
-  if (!encoder_->bits_available()) {
-    return;
-  }
-  encoder_->pull_bits();
 }
 
 void CameraVp9::publish()
@@ -38,4 +33,18 @@ void CameraVp9::publish()
 
   camera_info_.header = header_;
   pub_info_.publish(camera_info_);
+}
+
+void CameraVp9::run_pipeline()
+{
+  poll();
+  preprocess();
+  encode();
+
+  while (encoder_->bits_available()) {
+    encoder_->pull_bits();
+    publish();
+  }
+
+  CHK_DW(dwSensorCamera_returnFrame(&cameraFrameHandle_));
 }

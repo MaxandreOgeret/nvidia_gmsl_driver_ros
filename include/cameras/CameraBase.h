@@ -43,11 +43,6 @@ public:
   void start();
 
   /**
-   * @brief Executes once all the steps that the camera implements.
-   */
-  void run_pipeline();
-
-  /**
    * @brief Polls the camera until the buffer is empty. ensuring the frame is the most recent one.
    * @throws NvidiaGmslDriverRosMinorException
    */
@@ -58,6 +53,11 @@ public:
    * @attention Prerequisite : poll()
    */
   void preprocess();
+
+  /**
+   * @brief Has to be overridden. Executes once all the steps that the camera implements.
+   */
+  virtual void run_pipeline() = 0;
 
   /**
    * @brief Has to be overridden. Pushes the polled data (preprocessed or not) to the encoder, then fetches the data.

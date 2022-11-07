@@ -37,7 +37,16 @@ public:
    * @attention Prerequisite : encode()
    */
   void publish() override;
-  ~CameraH265() override;
+
+  /**
+   * @brief Default constructor.
+   */
+  ~CameraH265() override = default;
+
+  /**
+   * @brief Executes once all the steps that the camera implements.
+   */
+  void run_pipeline() override;
 
   inline static const std::string ENCODER_TYPE = "h265";
 

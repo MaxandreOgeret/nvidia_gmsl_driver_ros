@@ -48,6 +48,11 @@ public:
    */
   void publish() override;
 
+  /**
+   * @brief Executes once all the steps that the camera implements.
+   */
+  void run_pipeline() override;
+
   inline static const std::string ENCODER_TYPE = "jpg";
 
 private:
